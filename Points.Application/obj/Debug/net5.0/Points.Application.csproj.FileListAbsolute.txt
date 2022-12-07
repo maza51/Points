@@ -1,0 +1,17 @@
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/bin/Debug/net5.0/Points.Application.deps.json
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/bin/Debug/net5.0/Points.Application.dll
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/bin/Debug/net5.0/Points.Application.pdb
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/bin/Debug/net5.0/Points.DataAccess.dll
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/bin/Debug/net5.0/Points.Domain.dll
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/bin/Debug/net5.0/Points.DataAccess.pdb
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/bin/Debug/net5.0/Points.Domain.pdb
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/obj/Debug/net5.0/Points.Application.csproj.AssemblyReference.cache
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/obj/Debug/net5.0/Points.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/obj/Debug/net5.0/Points.Application.AssemblyInfoInputs.cache
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/obj/Debug/net5.0/Points.Application.AssemblyInfo.cs
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/obj/Debug/net5.0/Points.Application.csproj.CoreCompileInputs.cache
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/obj/Debug/net5.0/Points.Application.csproj.CopyComplete
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/obj/Debug/net5.0/Points.Application.dll
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/obj/Debug/net5.0/refint/Points.Application.dll
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/obj/Debug/net5.0/Points.Application.pdb
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.Application/obj/Debug/net5.0/ref/Points.Application.dll

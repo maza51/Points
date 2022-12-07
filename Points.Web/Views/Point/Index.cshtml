@@ -1,0 +1,188 @@
+@using Points.Domain.Entities
+@model List<Point>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title</title>
+    <script src="https://unpkg.com/konva@8/konva.min.js"></script>
+</head>
+<body>
+<div>
+  <a asp-controller="Point" asp-action="Create" style="margin: 20px">Создать точку</a>
+  <hr/>
+  
+  <form asp-controller="Comment" asp-action="Create" method="post">
+    <p><label>Добавить коментарий к точке id:</label>
+      <select name="id">
+        @foreach (Point point in Model)
+        {
+          <option value="@point.Id">@point.Id</option>
+        }
+      </select>
+    </p>
+    <p>
+      <label>Комментарий:</label>
+      <input type="text" name="comment"/>
+    </p>
+    <p>
+      <label>Цвет</label>
+        <select name="color">
+          <option value="#FFD700">Желтый</option>
+          <option value="#FF4500">Красный</option>
+          <option value="#FFFFFF">Белый</option>
+        </select>
+    </p>
+    <input type="submit" value="Отправить">
+  </form>
+
+  <script type="text/javascript">
+    
+      window.onload = function() {
+      var stage = new Konva.Stage({
+        container: 'container',
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+        
+      @foreach (Point point in Model)
+      {
+        <text>
+          
+          var layer = new PointLayer(@point.Id,
+            @point.PositionX,
+            @point.PositionY,
+            @point.Radius,
+            '@point.Color').getLayer();
+          
+          @for (int i = 0; i < point.Comments.Count(); i++)
+          {
+            <text>
+            
+            var comment = new Konva.Text({
+              x: 0,
+              y: 20 + @i * 30,
+              text: '@point.Comments[@i].Text',
+              fontSize: 20,
+              fontFamily: 'Calibri',
+              fill: '@point.Comments[@i].BackgroundColor' === '#FFFFFF' ? '#000000' : '#FFFFFF',
+              contentEditable: true
+            });
+          
+            var rect = new Konva.Rect({
+              x: comment.x() - 2,
+              y: comment.y() - 2,
+              stroke: '#555',
+              strokeWidth: 2,
+              fill: '@point.Comments[@i].BackgroundColor',
+              width: comment.width() + 4,
+              height: comment.height() + 4,
+              cornerRadius: 2,
+            });
+            
+            layer.add(rect);
+            layer.add(comment);
+            
+            </text>
+          }
+          
+          stage.add(layer);
+          
+          </text>
+      }
+    }
+    
+    class Comment {
+    
+      }
+    
+    class PointLayer {
+      posX;
+      posY;
+      radius;
+      color;
+      id;
+      
+      #layer;
+      #circle;
+      
+      constructor(id, posX, posY, radius, color) {
+        this.id = id;
+        this.posX = posX;
+        this.posY = posY;
+        this.radius = radius;
+        this.color = color;
+      }
+      
+      getLayer() {
+        this.#layer = new Konva.Layer({
+          draggable: true,
+          x: this.posX,
+          y: this.posY,
+          id: this.id,
+        });
+                  
+        this.#circle = new Konva.Circle({
+          name: 'circle',
+          radius: this.radius,
+          fill: this.color,
+          stroke: 'black',
+          strokeWidth: 4,
+        });
+                        
+        this.#layer.on('dragend', () => {
+          this.SaveInDb();
+        });
+        this.#circle.on('click', () => {
+          let tmpColor = getRandomColor();
+          this.#circle.setFill(tmpColor);
+          this.SaveInDb();
+        });
+        this.#circle.on('dblclick', () => {
+          this.#layer.setX(-100);
+          this.#layer.setY(-100);
+          this.SaveInDb();
+        });
+        
+        this.#layer.add(this.#circle);
+        return this.#layer;
+      }
+      
+      SaveInDb() {
+        let point = {
+          positionX: this.#layer.x(),
+          positionY: this.#layer.y(),
+          id: this.#layer.id(),
+          radius: this.#circle.radius(),
+          color: this.#circle.fill()
+        }
+              
+        fetch("https://" + document.location.host + '/api/point', {
+          method: "PUT",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(point)
+        });
+      }
+    }
+    
+    function getRandomColor() {
+      let letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+    </script>
+    
+    <div id="container"></div>
+</div>
+
+</body>
+</html>

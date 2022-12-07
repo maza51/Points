@@ -1,0 +1,15 @@
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/bin/Debug/net5.0/Points.DataAccess.deps.json
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/bin/Debug/net5.0/Points.DataAccess.dll
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/bin/Debug/net5.0/Points.DataAccess.pdb
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/bin/Debug/net5.0/Points.Domain.dll
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/bin/Debug/net5.0/Points.Domain.pdb
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/obj/Debug/net5.0/Points.DataAccess.csproj.AssemblyReference.cache
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/obj/Debug/net5.0/Points.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/obj/Debug/net5.0/Points.DataAccess.AssemblyInfoInputs.cache
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/obj/Debug/net5.0/Points.DataAccess.AssemblyInfo.cs
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/obj/Debug/net5.0/Points.DataAccess.csproj.CoreCompileInputs.cache
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/obj/Debug/net5.0/Points.DataAccess.csproj.CopyComplete
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/obj/Debug/net5.0/Points.DataAccess.dll
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/obj/Debug/net5.0/refint/Points.DataAccess.dll
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/obj/Debug/net5.0/Points.DataAccess.pdb
+/Users/admin/Documents/Projects/AspNetCore/Points/Points.DataAccess/obj/Debug/net5.0/ref/Points.DataAccess.dll
