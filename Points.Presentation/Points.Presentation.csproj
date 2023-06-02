@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.1.1-rc">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <TypeScriptCompile Include="scripts\api\commentApi.ts" />
+      <TypeScriptCompile Include="scripts\api\pointApi.ts" />
+      <TypeScriptCompile Include="scripts\app.ts" />
+      <TypeScriptCompile Include="scripts\konva\konvaComment.ts" />
+      <TypeScriptCompile Include="scripts\konva\konvaPoint.ts" />
+      <TypeScriptCompile Include="scripts\types\IComment.ts" />
+      <TypeScriptCompile Include="scripts\types\IPoint.ts" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Points.Application\Points.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\js\api\pointApi.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\api\pointApi.js.map" />
+    </ItemGroup>
+
+</Project>
